@@ -50,4 +50,10 @@ public class BasePage {
     find(locator).sendKeys(textToWrite); //* Que es lo que, queremos escribir 
   }
 
+  //* A CONTINUACION LO QUE CORRESPONDE A LAS VALIDACIONES */
+  public String textFromElement(String locator) {
+    return find(locator).getText();
+    //* del web element vamos a capturar el texto que contenga */
+  }
+
 }

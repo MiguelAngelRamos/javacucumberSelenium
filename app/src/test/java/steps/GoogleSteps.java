@@ -1,5 +1,7 @@
 package steps;
 
+import org.junit.Assert;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -28,6 +30,7 @@ public class GoogleSteps {
 
   @Then("^the results match the criteria$")
   public void validateResults() {
-    
+    //* De esta forma estamos creando un test desde Steps definitions */
+    Assert.assertEquals("Descargar Java para Windows", google.firstResult());
   }
 }
