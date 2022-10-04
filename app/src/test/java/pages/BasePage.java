@@ -1,4 +1,6 @@
 package pages;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,6 +37,10 @@ public class BasePage {
     driver.get(url);
   }
 
+  //* Para cerrar el navegador
+  public static void closeBrowser() {
+    driver.quit();
+  }
   //* Método que nos devuelve el web element */
   private WebElement find(String locator) {
     return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
@@ -69,6 +75,14 @@ public class BasePage {
   public void setValueFileButton(String locator, String stringToSend) {
     String buttonFile = locator;
     find(buttonFile).sendKeys(stringToSend);
+  }
+ 
+  public List<WebElement> bringMeAllElements(String locator) {
+    return driver.findElements(By.className(locator));
+    /* 
+    * findElements
+    * nos vuelve una lista de web elements
+    */
   }
 
   //* A CONTINUACION LO QUE CORRESPONDE A LAS VALIDACIONES */
