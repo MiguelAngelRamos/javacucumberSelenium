@@ -1,3 +1,4 @@
+@Grid # Le estamos indicando que se ejecute todos los escenarios
 Feature: Test different actions on the Static Table page
 
 Background: Navigate to table web app
