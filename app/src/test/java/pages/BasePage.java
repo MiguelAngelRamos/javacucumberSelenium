@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
@@ -39,7 +40,6 @@ public class BasePage {
     return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
   }
   
-
   //* Método que nos permite realizar un click en el elemento
   public void clickElement(String locator) {
     find(locator).click();
@@ -48,6 +48,12 @@ public class BasePage {
   public void write(String locator, String textToWrite ) {
     find(locator).clear(); //* Esto significa que vamos limpiar el campo de texto
     find(locator).sendKeys(textToWrite); //* Que es lo que, queremos escribir 
+  }
+
+  //* Método para buscar un Drop Down o Select por valor (value) */
+  public void selectFromDropDownByValue(String locator, String valueToSelect) {
+    Select dropdown = new Select(find(locator));
+    dropdown.selectByValue(valueToSelect);
   }
 
   //* A CONTINUACION LO QUE CORRESPONDE A LAS VALIDACIONES */
