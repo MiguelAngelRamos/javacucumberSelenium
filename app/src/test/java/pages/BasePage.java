@@ -56,6 +56,16 @@ public class BasePage {
     dropdown.selectByValue(valueToSelect);
   }
 
+  //* Nos va a devolver un contenido, que estamos buscando dentro de la Grid (tabla)
+  public String getValueFromTable(String locator, int row, int column) {
+    String cellNeed = locator + "/table/tbody/tr[" + row + "]/td[" + column + "]";
+    return find(cellNeed).getText();
+  }
+
+  public boolean elementIsDisplayed(String locator) {
+    return find(locator).isDisplayed(); //* retorna un verdadero o falso
+  }
+
   //* A CONTINUACION LO QUE CORRESPONDE A LAS VALIDACIONES */
   public String textFromElement(String locator) {
     return find(locator).getText();
