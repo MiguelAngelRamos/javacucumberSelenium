@@ -10,8 +10,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
   features = "src/test/resources/features",
   glue = "steps",
-  // tags = "@Test"
-  tags = {"@Grid"}
+  tags = "@Test"
+  // tags = {"@Grid"}
 )
 public class Runner {
   

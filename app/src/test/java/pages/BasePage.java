@@ -66,6 +66,11 @@ public class BasePage {
     return find(locator).isDisplayed(); //* retorna un verdadero o falso
   }
 
+  public void setValueFileButton(String locator, String stringToSend) {
+    String buttonFile = locator;
+    find(buttonFile).sendKeys(stringToSend);
+  }
+
   //* A CONTINUACION LO QUE CORRESPONDE A LAS VALIDACIONES */
   public String textFromElement(String locator) {
     return find(locator).getText();
