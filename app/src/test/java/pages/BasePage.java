@@ -8,7 +8,6 @@ public class BasePage {
 
   protected static WebDriver driver; //* exista un valor para todas las instancias de esta clase */
   //* Una instancia del web driver compartida  todas la clases */
-
   private static WebDriverWait wait;
 
   static {
@@ -18,7 +17,16 @@ public class BasePage {
     driver = new ChromeDriver(chromeOptions);
     wait = new WebDriverWait(driver, 10); //* le pasamos el objeto del driver y tiempo que deseamos que espera para realize la tarea */
   }
-  public BasePage(WebDriver driver) {
 
+  public BasePage(WebDriver driver) {
+    BasePage.driver = driver;
+    wait = new WebDriverWait(driver, 10);
   }
+  //* Ir hacia al sitio web
+  public static void navigateTo(String url) {
+    System.out.println(url);
+    //* Aqui donde entra en juego Selenium */
+    driver.get(url);
+  }
+
 }
