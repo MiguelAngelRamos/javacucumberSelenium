@@ -1,7 +1,10 @@
 package pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
@@ -29,6 +32,22 @@ public class BasePage {
     System.out.println(url);
     //* Aqui donde entra en juego Selenium */
     driver.get(url);
+  }
+
+  //* Método que nos devuelve el web element */
+  private WebElement find(String locator) {
+    return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+  }
+  
+
+  //* Método que nos permite realizar un click en el elemento
+  public void clickElement(String locator) {
+    find(locator).click();
+  }
+
+  public void write(String locator, String textToWrite ) {
+    find(locator).clear(); //* Esto significa que vamos limpiar el campo de texto
+    find(locator).sendKeys(textToWrite); //* Que es lo que, queremos escribir 
   }
 
 }
