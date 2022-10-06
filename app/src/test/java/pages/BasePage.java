@@ -22,6 +22,7 @@ public class BasePage {
   
     //* Aqui estamos creando el driver una sola vez para todas las instancias */
     ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.addArguments("--window-size=1920,1080");
     driver = new ChromeDriver(chromeOptions);
     wait = new WebDriverWait(driver, 10); //* le pasamos el objeto del driver y tiempo que deseamos que espera para realize la tarea */
   }

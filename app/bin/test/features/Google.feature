@@ -5,3 +5,8 @@ Scenario: As a user I enter a search criteria in Google
  When I enter a search criteria
  And click on the search button
  Then the results match the criteria
+
+ #* Given = dado
+ #* When = Cuando
+ #* Y = and
+ #* Then = Después
