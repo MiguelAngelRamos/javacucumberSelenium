@@ -32,5 +32,6 @@ public class GoogleSteps {
   public void validateResults() {
     //* De esta forma estamos creando un test desde Steps definitions */
     Assert.assertEquals("Descargar Java para Windows", google.firstResult());
+    
   }
 }
