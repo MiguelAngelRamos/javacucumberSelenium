@@ -21,4 +21,9 @@ public class AmazonSearchPage extends BasePage {
     clickElement(searchButton);
   }
 
+  public void goToPage2(String pageNumber){
+    //* Ir hacia esa pagina
+    goToLinkText(pageNumber);
+  }
+
 }

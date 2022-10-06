@@ -86,6 +86,11 @@ public class BasePage {
     */
   }
 
+  //* Para buscar un link con un texto y darle click
+  public void goToLinkText(String linkText) {
+    driver.findElement(By.linkText(linkText)).click();
+  }
+
   //* A CONTINUACION LO QUE CORRESPONDE A LAS VALIDACIONES */
   public String textFromElement(String locator) {
     return find(locator).getText();

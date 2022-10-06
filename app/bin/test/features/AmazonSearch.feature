@@ -6,7 +6,7 @@ Scenario Outline: As a customer when I search for product, I want to see if the 
 
 Given the user navigate to www.amazon.com
 And searches for <Product>
-# And navigates to the page number 2
+And navigates to the page number 2
 # And selects the thrid item
 # Then the user is able to add it to the cart
 
